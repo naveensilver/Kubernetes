@@ -1,4 +1,4 @@
-## ALL ABOUT PORT-FORWARD - Imp 
+## ALL ABOUT Port Forwarding/Kube Forwarding - Imp 
 
 Port forwarding in Kubernetes (K8s) is a method to access services running in a pod from your local machine. It allows you to route traffic from a local port to a specific port on a `pod or service` within the cluster, making it easier to test and interact with applications.
 
@@ -44,6 +44,12 @@ Port forwarding in Kubernetes (K8s) is a method to access services running in a 
 Port forwarding is a powerful tool in Kubernetes that simplifies the development workflow and allows for secure, temporary access to services running within a cluster. 
 
 ### Scenario
+
+What are the possible way of connecting to application apart from Services ?
+
+How to access Pod without using Service ? 
+
+- We can connect to pod using Kube Forwarding 
 
 Let’s say you have a web application running in a Kubernetes pod, and you want to access it locally. We’ll assume the application listens on port `80`.
 
