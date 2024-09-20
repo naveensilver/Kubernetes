@@ -76,14 +76,14 @@ kops create cluster --name=naveenops.live \
 
 
 # 6 Node cluster 
-
+```
 # kops create cluster --name=naveenops.live \
 # --state=s3://naveenops.live --zones=us-east-1a,us-east-1b,us-east-1c \
 # --node-count=3 --master-count=3 --node-size=t3.medium --master-size=t3.medium \
 # --master-zones=us-east-1a,us-east-1b,us-east-1c --master-volume-size 10 --node-volume-size 10 \
 # --ssh-public-key ~/.ssh/id_rsa.pub \
 # --dns-zone=naveenops.live --dry-run --output yaml
-
+```
 # After dry run, you will see YAML file.. thats is our k8s cluster yaml file. Now copy entire yaml Script 
 
 # Now create $ vi cluster.yaml and paste the k8s cluster yaml script, you can change the subnets if you want !!
