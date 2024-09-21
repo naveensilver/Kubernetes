@@ -159,10 +159,11 @@ sudo certbot certificates
 
 By following these steps, you can set up automated certificate management using Let’s Encrypt and Certbot for your microservices application. This will help ensure secure communications with HTTPS while minimizing the manual overhead of managing SSL certificates.
 
+-------------------------------------------------
 
 B) Here’s a step-by-step guide to set up `Manual` certificate management using Let’s Encrypt and Certbot for a microservices application with publicly accessible endpoints.
 
-Sure! Here’s a step-by-step guide for manually managing SSL certificates using Let’s Encrypt and Certbot. This method is useful if you need to generate certificates without automatic renewal or if you're managing the certificates manually for specific reasons.
+Here’s a step-by-step guide for manually managing SSL certificates using Let’s Encrypt and Certbot. This method is useful if you need to generate certificates without automatic renewal or if you're managing the certificates manually for specific reasons.
 
 ### Prerequisites
 
@@ -243,7 +244,7 @@ The DNS-01 challenge is a method used by Let’s Encrypt to verify that you own 
 
 Here’s how to perform the DNS-01 challenge using Certbot:
 
-#### Step 3.1: Request a Certificate with the DNS-01 Challenge
+#### 3.1: Request a Certificate with the DNS-01 Challenge
 
 You can use Certbot with the `--manual` option to specify that you want to use the DNS-01 challenge:
 
@@ -251,7 +252,7 @@ You can use Certbot with the `--manual` option to specify that you want to use t
 sudo certbot certonly --manual --preferred-challenges dns -d yourdomain.com -d www.yourdomain.com
 ```
 
-#### Step 3.2: Receive Instructions for the TXT Record
+#### 3.2: Receive Instructions for the TXT Record
 
 After you run the command, Certbot will display instructions that include:
 
@@ -270,7 +271,7 @@ abcd1234tokenvalue5678
 Before continuing, verify the record is deployed.
 ```
 
-#### Step 3.3: Create the TXT Record
+#### 3.3: Create the TXT Record
 
 1. **Access Your DNS Management**: Log in to your domain registrar or DNS hosting provider's dashboard.
 
@@ -281,7 +282,7 @@ Before continuing, verify the record is deployed.
 
 3. **Save Changes**: After adding the record, save your changes.
 
-#### Step 3.4: Verify DNS Propagation
+#### 3.4: Verify DNS Propagation
 
 - **Wait for DNS Propagation**: It may take a few minutes for the new TXT record to propagate across the internet. You can use online tools like `dig` or DNS lookup websites to verify that the TXT record is available.
 
@@ -289,14 +290,14 @@ Before continuing, verify the record is deployed.
 dig TXT _acme-challenge.yourdomain.com
 ```
 
-#### Step 3.5: Continue with Certbot
+#### 3.5: Continue with Certbot
 
 Once the TXT record is verified:
 
 - Go back to the terminal where Certbot is running.
 - It will check for the TXT record and, if found, proceed to issue the SSL certificate.
 
-### Step 3.6: Complete the Process
+### 3.6: Complete the Process
 
 After the challenge is successfully completed, Certbot will generate the SSL certificate files, and you can then configure your web server to use them.
 
@@ -304,15 +305,13 @@ After the challenge is successfully completed, Certbot will generate the SSL cer
 
 The DNS-01 challenge is a robust method for validating domain ownership, particularly useful for wildcard certificates or in scenarios where the HTTP-01 challenge isn't applicable. It requires manual interaction with your DNS settings but provides a secure and reliable way to obtain SSL certificates.
 
-If you have further questions or need clarification on any steps, feel free to ask!
-
 ### Step 4: Locate Your Certificates
 
 After successfully obtaining the certificates, you can find them in the following directory:
 
 - **Certificate files**: 
-  - `/etc/letsencrypt/live/yourdomain.com/fullchain.pem` (the full certificate chain)
-  - `/etc/letsencrypt/live/yourdomain.com/privkey.pem` (the private key)
+  - `/etc/letsencrypt/live/<yourdomain.com>/fullchain.pem` (the full certificate chain/tls.crt)
+  - `/etc/letsencrypt/live/<yourdomain.com>/privkey.pem` (the private key/tls.key)
 
 ### Step 5: Configure Your Web Server
 
