@@ -228,7 +228,7 @@ Depending on your selected method, Certbot will prompt you to complete the domai
 - **DNS-01 Challenge**: If you choose this method, you’ll need to create a TXT record in your domain's DNS settings manually. Certbot will provide instructions.
 
 ```
-Sure! The DNS-01 challenge is a method used by Let’s Encrypt to verify that you own a domain by requiring you to create a specific DNS TXT record. Here’s a detailed breakdown of how it works:
+The DNS-01 challenge is a method used by Let’s Encrypt to verify that you own a domain by requiring you to create a specific DNS TXT record. Here’s a detailed breakdown of how it works:
 
 ### How the DNS-01 Challenge Works
 
@@ -306,6 +306,7 @@ After the challenge is successfully completed, Certbot will generate the SSL cer
 The DNS-01 challenge is a robust method for validating domain ownership, particularly useful for wildcard certificates or in scenarios where the HTTP-01 challenge isn't applicable. It requires manual interaction with your DNS settings but provides a secure and reliable way to obtain SSL certificates.
 
 If you have further questions or need clarification on any steps, feel free to ask!
+
 ```
 
 ### Step 4: Locate Your Certificates
