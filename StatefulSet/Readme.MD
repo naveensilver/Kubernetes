@@ -1,3 +1,10 @@
+We'll learn:  
+**1. Differences between Stateless and Stateful applications**  
+**2. What problems a StatefulSet solves**  
+**3. Where to use Headless Services**  
+**4. Differences between Deployment and StatefulSet**  
+**5. How to deploy a Stateful application with multiple replicas using StatefulSets with complete hands-on**  
+
 Let's break down the key concepts and cover each of your points with detailed explanations:
 
 ### 1. **Differences Between Stateless and Stateful Applications**
