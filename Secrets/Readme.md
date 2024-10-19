@@ -71,8 +71,25 @@ You can also define Secrets in a YAML file:
     name: my-secret
   type: Opaque
   data:
-    username: bXl1c2Vy  # base64 encoded value of 'myuser'
+    username: bXl1c2Vy  # base64 encoded value of 'myuser'  
     password: bXlwYXNzd29yZA==  # base64 encoded value of 'mypassword'
+   
+  ```
+Here’s a concise guide for encoding and decoding in base64:
+
+### Command Line
+
+#### Linux/macOS
+- **Encode**:
+  ```bash
+  echo -n 'myuser' | base64  # Output: bXl1c2Vy
+  echo -n 'mypassword' | base64  # Output: bXlwYXNzd29yZA==
+  ```
+
+- **Decode**:
+  ```bash
+  echo 'bXl1c2Vy' | base64 --decode  # Output: myuser
+  echo 'bXlwYXNzd29yZA==' | base64 --decode  # Output: mypassword
   ```
 
 - **Create the Secret**:
