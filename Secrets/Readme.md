@@ -21,6 +21,8 @@ A **Secret** in Kubernetes is an object that stores sensitive information, such 
 
 ### How to Create Secrets
 
+### Imperative Creation
+
 #### 1. Creating a Generic Secret
 
 - **From Literal Values**:
@@ -57,6 +59,27 @@ kubectl create secret tls my-tls-secret \
    --key=path/to/tls.key
 ```
 
+### Declarative Creation
+
+You can also define Secrets in a YAML file:
+
+- **Example of a Generic Secret** (`my-secret.yaml`):
+  ```yaml
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: my-secret
+  type: Opaque
+  data:
+    username: bXl1c2Vy  # base64 encoded value of 'myuser'
+    password: bXlwYXNzd29yZA==  # base64 encoded value of 'mypassword'
+  ```
+
+- **Create the Secret**:
+  ```bash
+  kubectl apply -f my-secret.yaml
+  ```
+  
 ### Best Practices for Managing Secrets
 
 1. **Limit Access**: Use Role-Based Access Control (RBAC) to limit who can view or modify secrets.
