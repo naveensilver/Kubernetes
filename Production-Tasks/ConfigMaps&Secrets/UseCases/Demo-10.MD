@@ -1,4 +1,4 @@
-Sure! Let’s walk through an **end-to-end implementation** of managing backup configurations using a Kubernetes **ConfigMap** and **Secret**. This example will simulate backing up a database configuration, utilizing a CronJob to automate the backup process.
+Let’s walk through an **end-to-end implementation** of managing backup configurations using a Kubernetes **ConfigMap** and **Secret**. This example will simulate backing up a database configuration, utilizing a CronJob to automate the backup process.
 
 ### Use Case: Backup and Restore Configurations
 
