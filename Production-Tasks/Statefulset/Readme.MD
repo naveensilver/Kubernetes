@@ -1,4 +1,3 @@
-Great choice! Let’s dive into **StatefulSets** in Kubernetes.
 
 ### What is a StatefulSet?
 
