@@ -60,6 +60,12 @@ Here are some real-time scenarios where Kubernetes network policies can be effec
 
 **Implementation**: Use network policies to restrict ingress to your monitoring and logging pods so that only selected application pods can send data to them.
 
+### 11. Development vs. Production Environment
+
+**Use Case**: Prevent development pods from accessing production resources.
+
+**Example**: In a scenario where developers have a separate namespace for testing and staging, you can implement Network Policies that block access to production services from any pods in the development namespace while allowing specific CI/CD tools to interact with production for deployment purposes Impliment this end to end from scratch 
+
 ### Conclusion
 
 These scenarios illustrate the flexibility and power of Kubernetes network policies in enforcing security and controlling traffic flow in various environments. By implementing the right policies, you can significantly enhance the security posture of your applications and their communication.
