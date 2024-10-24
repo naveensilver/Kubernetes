@@ -13,7 +13,7 @@ In Kubernetes (and in general computing), **authentication (AuthN)** and **autho
 
 2. **API Server Role**: The Kubernetes API server is responsible for handling authentication. It checks incoming requests against the configured authentication mechanisms.
 
-3. **Success or Failure**: If authentication is successful, the API server associates the request with the authenticated user. If it fails, the request is denied, typically resulting in an HTTP response with status code **401 Unauthorized**.
+3. **Success or Failure**: If authentication is successful, the API server associates the request with the authenticated user, typically resulting in an HTTP response with status code **200 OK**. If it fails, the request is denied, typically resulting in an HTTP response with status code **401 Unauthorized**.
 
 ### Authorization (AuthZ)
 
@@ -26,18 +26,20 @@ In Kubernetes (and in general computing), **authentication (AuthN)** and **autho
 
 2. **Attribute-Based Access Control (ABAC)**: Another method where access decisions are made based on user attributes, such as roles, group membership, and labels.
 
-3. **Access Decision**: When a request is made, the API server checks the authenticated user’s permissions against the defined roles and bindings. If the user has the required permissions, the action is allowed; otherwise, it is denied, typically resulting in an HTTP response with status code **403 Forbidden**.
+3. **Access Decision**: When a request is made, the API server checks the authenticated user’s permissions against the defined roles and bindings. If the user has the required permissions, the action is allowed, resulting in an HTTP response with status code **200 OK**. If the user lacks the necessary permissions, the request is denied, typically resulting in an HTTP response with status code **403 Forbidden**.
 
 ### Summary of the Differences
 
 - **Authentication (AuthN)**:
   - Confirms **who** you are.
   - Verifies identity through methods like certificates, tokens, or credentials.
+  - Successful requests result in **200 OK**.
   - Denied requests result in **401 Unauthorized**.
 
 - **Authorization (AuthZ)**:
   - Determines **what** you can do.
   - Controls access to resources based on permissions defined in roles.
+  - Successful requests result in **200 OK**.
   - Denied requests result in **403 Forbidden**.
 
 ### Importance in Kubernetes
