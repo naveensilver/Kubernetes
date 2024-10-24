@@ -51,7 +51,9 @@ Kubernetes clusters are inherently open, allowing all pods to communicate with e
 
 ### Key Concepts
 
-1. **Selectors**: Network policies use label selectors to specify which pods they apply to. This allows fine-grained control over which pods can communicate.
+1. **Selectors**: 
+   - **Pod Selector**: Defines which pods the policy applies to based on labels.
+   - **Namespace Selector**: Defines which namespaces can communicate with the selected pods.
 
 2. **Ingress and Egress Rules**: 
    - **Ingress Rules**: Define the allowed incoming traffic to the selected pods.
@@ -63,7 +65,7 @@ Kubernetes clusters are inherently open, allowing all pods to communicate with e
 
 4. **Default Deny**: If no network policy applies to a pod, all traffic is allowed by default. Once a policy is applied, it can restrict traffic according to the defined rules.
 
-5. **Network Plugin**: Network policies require a compatible network plugin that supports them. Ensure your chosen CNI (Container Network Interface) supports network policies.
+5. **Network Plugin**: Network policies require a compatible network plugin that supports them. Ensure your chosen [CNI (Container Network Interface)] supports network policies.
 
 ### Conclusion
 
